@@ -27,7 +27,7 @@ public class storeControl : MonoBehaviour {
 	}
 
 	void Start () {
-		//Set Base Prices
+		//Jacob This is where you set the starting price for each Item
 		prices["clock"] = 10;
 		prices["pagsDesk"] = 10;
 		prices["studentDesk"] = 10;
@@ -39,7 +39,7 @@ public class storeControl : MonoBehaviour {
 		prices["horse"] = 10;
 		prices["rock"] = 10;
 
-		//Set Multiplyers
+		//This is where you set what percentage the item will get more expensive by
 		multiplyer["clock"] = 1.5;
 		multiplyer["pagsDesk"] = 1.5;
 		multiplyer["studentDesk"] = 1.5;
@@ -51,7 +51,7 @@ public class storeControl : MonoBehaviour {
 		multiplyer["horse"] = 1.5;
 		multiplyer["rock"] = 1.5;
 
-		//Set Description
+		//Ignore this part
 		descriptions["clock"] = "This is a Basic Clock|Now the clock will\nwork|more Description|The Best Clock";
 		descriptions["pagsDesk"] = "This is Pags' Desk|Place Holder|Place Holder|Place Holder";
 		descriptions["studentDesk"] = "This is your Desk|Place Holder|Place Holder|Place Holder";
