@@ -50,7 +50,7 @@ public class questionOfTheDayHandler : MonoBehaviour {
 		{
 			Vector3 wp = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
 			Vector2 touchPos = new Vector2(wp.x, wp.y);
-			if (collider2D == Physics2D.OverlapPoint(touchPos))
+			if (GetComponent<Collider2D>() == Physics2D.OverlapPoint(touchPos))
 			{
 				canColide = true;
 			} else { canColide = false;}
@@ -60,7 +60,7 @@ public class questionOfTheDayHandler : MonoBehaviour {
 			canColide = false;
 			Vector3 wp = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
 			Vector2 touchPos = new Vector2(wp.x, wp.y);
-			if (collider2D == Physics2D.OverlapPoint(touchPos))
+			if (GetComponent<Collider2D>() == Physics2D.OverlapPoint(touchPos))
 			{
 				goOnGUI = true;
 				cameraScroll.cameraControl.enabled = false;

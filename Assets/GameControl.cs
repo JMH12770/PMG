@@ -172,7 +172,7 @@ public class GameControl : MonoBehaviour {
 //************************** Aspect Ratio Stuff ********************************
 	void getAspectRatio() {
 		Camera cam;
-		cam = GameObject.Find ("Student").camera;
+		cam = GetComponent<Camera>();
 
 		if (cam.aspect >= 1.3F && cam.aspect < 1.5) {
 			aspects[0] = 4;

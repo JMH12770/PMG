@@ -13,7 +13,7 @@ public class pagsHandler : MonoBehaviour {
 	public void updatePags (int listingID) {
 		Sprite currentPags = getPags (listingID);
 
-		SpriteRenderer sprRenderer = (SpriteRenderer)renderer;
+		SpriteRenderer sprRenderer = (SpriteRenderer)GetComponent<Renderer>();
 		sprRenderer.sprite = currentPags;
 	}
 

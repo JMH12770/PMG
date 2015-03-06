@@ -102,12 +102,12 @@ public class conversationHandler : MonoBehaviour {
 		foreach (string currentText in textPages) {
 			for (int i = 0; i <= currentText.Length; i++) {
 				displayedText = currentText.Substring(0,i);
-				if (!audio.isPlaying && goOnGUI == true) {
-					audio.Play();
+				if (!GetComponent<AudioSource>().isPlaying && goOnGUI == true) {
+					GetComponent<AudioSource>().Play();
 				}
 				yield return new WaitForSeconds(0.05f);
 			}
-			audio.Stop ();
+			GetComponent<AudioSource>().Stop ();
 			yield return new WaitForSeconds(0.3f);
 		}
 		if (options != null) {

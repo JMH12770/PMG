@@ -16,7 +16,7 @@ public class outfitScroll : MonoBehaviour {
 		{
 			Vector3 wp = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
 			Vector2 touchPos = new Vector2(wp.x, wp.y);
-			if (Physics2D.OverlapPointAll(touchPos).Contains (collider2D))
+			if (Physics2D.OverlapPointAll(touchPos).Contains (GetComponent<Collider2D>()))
 			{
 				cameraScroll.cameraControl.isEnabled = false;
 

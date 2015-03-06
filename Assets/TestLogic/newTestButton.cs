@@ -15,13 +15,13 @@ public class newTestButton : MonoBehaviour {
 	}
 
 	void Update() {
-		SpriteRenderer sprRenderer= (SpriteRenderer)renderer;
+		SpriteRenderer sprRenderer= (SpriteRenderer)GetComponent<Renderer>();
 	
 		if (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began)
 		{
 			Vector3 wp = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
 			Vector2 touchPos = new Vector2(wp.x, wp.y);
-			if (collider2D == Physics2D.OverlapPoint(touchPos))
+			if (GetComponent<Collider2D>() == Physics2D.OverlapPoint(touchPos))
 			{
 				canColide = true;
 			} else { canColide = false;}
@@ -32,7 +32,7 @@ public class newTestButton : MonoBehaviour {
 			canColide = false;
 			Vector3 wp = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
 			Vector2 touchPos = new Vector2(wp.x, wp.y);
-			if (collider2D == Physics2D.OverlapPoint(touchPos))
+			if (GetComponent<Collider2D>() == Physics2D.OverlapPoint(touchPos))
 			{
 				sprRenderer.sprite = spr;
 				getScore.over.isOver = false;

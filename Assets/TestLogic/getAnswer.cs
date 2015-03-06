@@ -16,7 +16,7 @@ public class getAnswer : MonoBehaviour {
 	}
 
 	void Update() {
-		SpriteRenderer sprRenderer= (SpriteRenderer)renderer;
+		SpriteRenderer sprRenderer= (SpriteRenderer)GetComponent<Renderer>();
 		if (goOnGUI == true && generateTest.generate.timeUp == true) {
 			goOnGUI = false;
 		}
@@ -24,7 +24,7 @@ public class getAnswer : MonoBehaviour {
 		{
 			Vector3 wp = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
 			Vector2 touchPos = new Vector2(wp.x, wp.y);
-			if (collider2D == Physics2D.OverlapPoint(touchPos))
+			if (GetComponent<Collider2D>() == Physics2D.OverlapPoint(touchPos))
 			{
 				canColide = true;
 			} else { canColide = false;}
@@ -34,7 +34,7 @@ public class getAnswer : MonoBehaviour {
 			canColide = false;
 			Vector3 wp = Camera.main.ScreenToWorldPoint(Input.GetTouch(0).position);
 			Vector2 touchPos = new Vector2(wp.x, wp.y);
-			if (collider2D == Physics2D.OverlapPoint(touchPos))
+			if (GetComponent<Collider2D>() == Physics2D.OverlapPoint(touchPos))
 			{
 				sprRenderer.sprite = spr;
 				goOnGUI = true;
@@ -43,7 +43,7 @@ public class getAnswer : MonoBehaviour {
 	}
 
 	void OnGUI () {
-		SpriteRenderer sprRenderer= (SpriteRenderer)renderer;
+		SpriteRenderer sprRenderer= (SpriteRenderer)GetComponent<Renderer>();
 		if (goOnGUI == true){
 			GUI.Box (new Rect (Screen.width / 5, (Screen.height / 12) * 6, (Screen.width / 5) * 3, Screen.height / 12), "Answer: " + input);
 			
