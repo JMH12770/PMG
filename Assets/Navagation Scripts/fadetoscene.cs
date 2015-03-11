@@ -22,7 +22,7 @@ public class fadetoscene : MonoBehaviour {
 
 	void mrT() {
 		if (transform.position.x >= 18) {
-			Vector3 temp = new Vector3(-4,0,-10);
+			Vector3 temp = new Vector3(0,0,-10);
 			GameControl.control.cameraVector = temp;
 			Application.LoadLevel("store");
 		}

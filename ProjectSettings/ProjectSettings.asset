@@ -75,7 +75,7 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleIdentifier: com.cynicalrobotstudios.pmg
-  bundleVersion: 0.0.5
+  bundleVersion: 1.0
   preloadedAssets: []
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0
@@ -92,7 +92,7 @@ PlayerSettings:
   ForceSDCardPermission: 1
   CreateWallpaper: 0
   APKExpansionFiles: 0
-  preloadShaders: 0
+  preloadShaders: 1
   StripUnusedMeshComponents: 0
   iPhoneSdkVersion: 988
   iPhoneTargetOSVersion: 22
@@ -116,7 +116,7 @@ PlayerSettings:
   iOSLaunchScreenLandscape: {fileID: 0}
   iOSLaunchScreenBackgroundColor:
     serializedVersion: 2
-    rgba: 0
+    rgba: 4294967040
   iOSLaunchScreenFillPct: 1
   iOSLaunchScreenCustomXibPath: 
   AndroidTargetDevice: 0

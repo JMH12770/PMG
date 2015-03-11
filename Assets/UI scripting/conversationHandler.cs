@@ -12,6 +12,7 @@ public class conversationHandler : MonoBehaviour {
 	private string[] options;
 	private Texture2D person;
 	private bool checkForNext = false;
+	private BoxCollider2D boxCollider;
 
 	public bool replyReady = false;
 	public GUIStyle textStyle;
@@ -30,6 +31,12 @@ public class conversationHandler : MonoBehaviour {
 		}
 	}
 
+	void Start() {
+		boxCollider = gameObject.AddComponent<BoxCollider2D>();
+		boxCollider.size = new Vector2 (50f, 50f);
+		boxCollider.enabled = false;
+	}
+
 	void Update () {
 		if (checkForNext == true)  {
 			if (Input.touchCount == 1) {
@@ -42,6 +49,7 @@ public class conversationHandler : MonoBehaviour {
 	public bool conversation(string[] conversation) {
 		string currentText;
 
+		boxCollider.enabled = true;
 		replyReady = false;
 		displayOptions = false;
 		goOnGUI = true;
@@ -76,6 +84,7 @@ public class conversationHandler : MonoBehaviour {
 	public void reset () {
 		goOnGUI = false;
 		displayOptions = false;
+		boxCollider.enabled = false;
 	}
 
 	IEnumerator renderText() {

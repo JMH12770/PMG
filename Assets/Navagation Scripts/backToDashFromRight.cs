@@ -24,7 +24,7 @@ public class backToDashFromRight : MonoBehaviour {
 	}
 	void limits() {
 		if (transform.position.x <= -6) {
-			Vector3 temp = new Vector3(4,0,-10);
+			Vector3 temp = new Vector3(0,0,-10);
 			GameControl.control.cameraVector = temp;
 			Application.LoadLevel("store");
 		}

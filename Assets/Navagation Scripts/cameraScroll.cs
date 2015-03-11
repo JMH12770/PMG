@@ -5,7 +5,7 @@ public class cameraScroll : MonoBehaviour {
 	public static cameraScroll cameraControl;
 
 	public bool isEnabled = true;
-	public float speed = 0.8f;
+	public float speed = 0.001f;
 
 	void Awake () {
 		cameraControl = this;

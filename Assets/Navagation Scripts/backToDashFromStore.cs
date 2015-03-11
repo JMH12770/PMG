@@ -10,20 +10,25 @@ public class backToDashFromStore : MonoBehaviour {
 	void Update() {
 		Invoke("limits",0);
 		if ( Input.touchCount == 0) {
-			if (transform.position.x > 4) {
-				transform.Translate (-0.5f, 0f, 0f);
-			} else if (transform.position.x < -4) {
-				transform.Translate (+0.5f, 0f, 0f);
+			if (transform.position.x > 0.4) {
+				transform.Translate (-0.4f, 0f, 0f);
+			} else if (transform.position.x < -0.4) {
+				transform.Translate (+0.4f, 0f, 0f);
+			}
+			if (transform.position.x > 0.1 && transform.position.x <= 0.4) {
+				transform.Translate (-0.1f, 0f, 0f);
+			} else if (transform.position.x < -0.1 && transform.position.x >= -0.4) {
+				transform.Translate (0.1f, 0f, 0f);
 			}
 		}
 	}
 	void limits() {
-		if (transform.position.x <= -10) {
+		if (transform.position.x <= -6) {
 			Vector3 temp = new Vector3(12,0,-10);
 			GameControl.control.cameraVector = temp;
 			Application.LoadLevel("Dashboard");
 		}
-		if (transform.position.x >= 10) {
+		if (transform.position.x >= 6) {
 			Vector3 temp = new Vector3(0,0,-10);
 			GameControl.control.cameraVector = temp;
 			Application.LoadLevel("customePags");
@@ -31,15 +36,15 @@ public class backToDashFromStore : MonoBehaviour {
 	}
 
 	void OnGUI () {
-		if (transform.position.x >= 4) {
-			mohawk = (transform.position.x - 4) / 6;
+		if (transform.position.x > 0) {
+			mohawk = (transform.position.x) / 6;
 			mohawk = Mathf.Clamp01 (mohawk);
 			GUI.color = new Color (GUI.color.r, GUI.color.g, GUI.color.b, mohawk);
 			GUI.depth = drawDepth;
 			GUI.DrawTexture (new Rect (0, 0, Screen.width, Screen.height), fadeOutTexture);
-		} else if (transform.position.x <= -4) {
-			mohawk = (transform.position.x + 10) / 6;
-			mohawk = (mohawk -1)/-1;
+		} else if (transform.position.x < 0) {
+			mohawk = (transform.position.x) / 6;
+			mohawk = mohawk * -1;
 			mohawk = Mathf.Clamp01 (mohawk);
 			GUI.color = new Color (GUI.color.r, GUI.color.g, GUI.color.b, mohawk);
 			GUI.depth = drawDepth;

@@ -62,7 +62,7 @@ public class storeGUI : MonoBehaviour {
 			GUI.Box (new Rect ((Screen.width / 25) * 14, (Screen.height / 14) * 8, (Screen.width / 25) * 10, (Screen.height / 14) * 5), background);
 			renderFlavertext(price.ToString());
 
-			StartCoroutine(renderImage());
+			GUI.DrawTexture (new Rect ((Screen.width / 25) * 17, ((Screen.height / 14) * 2) + (Screen.height/28 * Mathf.Sin (Time.time * 2.0f)), (Screen.width / 25) * 4, (Screen.width / 25) * 4), currentRender);
 
 
 			if (Int32.Parse (levelsOwned[currentID]) < 4){
@@ -135,7 +135,7 @@ public class storeGUI : MonoBehaviour {
 	}
 
 	IEnumerator renderImage() {
-		GUI.DrawTexture (new Rect ((Screen.width / 25) * 17, (Screen.height / 14) * 2, (Screen.width / 25) * 4, (Screen.width / 25) * 4), currentRender);
+		GUI.DrawTexture (new Rect ((Screen.width / 25) * 17, ((Screen.height / 14) * 2) + (3f * Mathf.Sin (Time.time * 2.0f)), (Screen.width / 25) * 4, (Screen.width / 25) * 4), currentRender);
 
 		yield return null;
 	}
