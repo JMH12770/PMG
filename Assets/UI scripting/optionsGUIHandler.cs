@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.IO;
 
 public class optionsGUIHandler : MonoBehaviour {
 	public float hSliderValue = 5.0f;
@@ -15,6 +16,16 @@ public class optionsGUIHandler : MonoBehaviour {
 			PlayerPrefs.SetFloat("randomEventTimer", hSliderValue);
 			PlayerPrefs.Save();
 			StartCoroutine(toScene());
+		}
+		if (GUI.Button (new Rect ((Screen.width / 10) * 2, (Screen.height / 10) * 8, (Screen.width / 10) * 2, (Screen.height / 14) * 2), "CLEAR SAVES")) {
+			DirectoryInfo downloadedMessageInfo = new DirectoryInfo(Application.persistentDataPath);
+			
+			foreach (FileInfo file in downloadedMessageInfo.GetFiles())
+			{
+				Debug.Log (file);
+				file.Delete(); 
+			}
+			Application.Quit();
 		}
 	}
 

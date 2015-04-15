@@ -119,6 +119,7 @@ public class storeGUI : MonoBehaviour {
 			}
 			
 			current = Resources.Load<Texture2D>("Dev Art/"+name+"/"+name+""+levelsOwned[i]);
+			Debug.Log("Dev Art/"+name+"/"+name+""+levelsOwned[i]);
 			GUI.DrawTexture (new Rect ((Screen.width / 125) * 3, (Screen.height / 56) * texturePos, (Screen.height / 56) * 14, (Screen.height / 56) * 14),
 			                 current, ScaleMode.StretchToFill, true, 10.0f);
 			
